@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI忍者くん | daruma-ad - AIの力で、あなたの想いをカタチに</title>
+  <meta name="description" content="AI忍者くんはdaruma-adが提供するAI活用Webサービス。ホームページ制作・アプリ開発・AI画像生成・動画制作をAIの力でスピーディーに高品質にお届けします。">
+  <meta property="og:title" content="AI忍者くん | daruma-ad">
+  <meta property="og:description" content="AIの力で、あなたの想いをカタチに。ホームページ制作・アプリ開発・AI画像生成。">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700;900&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">🥷</span>
+        <span class="logo-text">
+          <span class="logo-main">AI忍者くん</span>
+          <span class="logo-sub">by daruma-ad</span>
+        </span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#services" class="nav-link">サービス</a>
+        <a href="#features" class="nav-link">特徴</a>
+        <a href="#ninja" class="nav-link">AI忍者くんとは</a>
+        <a href="#flow" class="nav-link">制作の流れ</a>
+        <a href="#contact" class="nav-link">お問い合わせ</a>
+      </nav>
+      <a href="#contact" class="header-cta">無料相談</a>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ヒーローセクション -->
+  <section class="hero" id="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-badge">🥷 AI × 和の技術</p>
+        <h1 class="hero-title">
+          <span class="hero-title-line">AIの力で、</span>
+          <span class="hero-title-line accent">あなたの想いを</span>
+          <span class="hero-title-line">カタチに。</span>
+        </h1>
+        <p class="hero-subtitle">AI忍者くんが、ホームページ制作・アプリ開発・<br>AI画像生成をお手伝いします。</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">無料相談する</a>
+          <a href="#services" class="btn btn-secondary">サービスを見る</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/ninja-hero.png" alt="AI忍者くん" class="ninja-hero-img">
+        <div class="hero-glow"></div>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z" fill="var(--bg-primary)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- サービス紹介 -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Services</p>
+        <h2 class="section-title">AI忍者くんの<span class="text-accent">サービス</span></h2>
+        <p class="section-desc">AIテクノロジーと和の心を融合した、4つのサービスでビジネスを支援します。</p>
+      </div>
+      <div class="services-grid">
+        <!-- AI画像生成 -->
+        <div class="service-card fade-in">
+          <div class="service-icon">🎨</div>
+          <h3 class="service-title">AI画像生成</h3>
+          <p class="service-desc">着物の生地データからAIモデルに着付けた画像を生成。モデル不要・撮影不要でEC掲載・広告に最適なビジュアルをお届けします。</p>
+          <ul class="service-features">
+            <li>生地表現の高い再現性</li>
+            <li>自然なポージング</li>
+            <li>商用利用可・クレジット不要</li>
+          </ul>
+          <a href="https://daruma-ad.github.io/AI_kimono/" class="service-link" target="_blank">詳しく見る →</a>
+        </div>
+        <!-- アプリ開発 -->
+        <div class="service-card fade-in">
+          <div class="service-icon">📱</div>
+          <h3 class="service-title">アプリ開発</h3>
+          <p class="service-desc">AIとWebテクノロジーを活用したアプリ開発。占い診断・バーチャル試着・ポイント管理など、業種に特化したアプリをご提案。</p>
+          <ul class="service-features">
+            <li>PWA対応でアプリ風体験</li>
+            <li>Firebase連携</li>
+            <li>スマホから気軽に利用可能</li>
+          </ul>
+          <a href="https://daruma-ad.github.io/AI_kimono/apps.html" class="service-link" target="_blank">アプリ事例を見る →</a>
+        </div>
+        <!-- ホームページ制作 -->
+        <div class="service-card fade-in">
+          <div class="service-icon">🏯</div>
+          <h3 class="service-title">ホームページ制作</h3>
+          <p class="service-desc">AIを活用した高品質なWebサイト制作。LP・コーポレートサイト・ECサイトなど、目的に合わせた最適なサイトを制作します。</p>
+          <ul class="service-features">
+            <li>AIで制作スピード向上</li>
+            <li>レスポンシブ対応</li>
+            <li>SEO最適化済み</li>
+          </ul>
+          <a href="#contact" class="service-link">お問い合わせ →</a>
+        </div>
+        <!-- 動画制作 -->
+        <div class="service-card fade-in">
+          <div class="service-icon">🎬</div>
+          <h3 class="service-title">動画制作</h3>
+          <p class="service-desc">プロモーション動画・SNS動画・インバウンド観光案内動画など、AIを活用した映像コンテンツを制作します。</p>
+          <ul class="service-features">
+            <li>着物業界特化のPR動画</li>
+            <li>観光地プロモーション</li>
+            <li>SNS用ショート動画</li>
+          </ul>
+          <a href="https://daruma-ad.github.io/AI_kimono/videos.html" class="service-link" target="_blank">動画実績を見る →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3つの特徴 -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Features</p>
+        <h2 class="section-title">選ばれる<span class="text-accent">3つの理由</span></h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-number">壱</div>
+          <div class="feature-icon">⚡</div>
+          <h3 class="feature-title">速い</h3>
+          <p class="feature-desc">AI活用で従来の制作スピードの<strong>3倍</strong>。素早い初稿提出と迅速な対応で、ビジネスチャンスを逃しません。</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-number">弐</div>
+          <div class="feature-icon">💰</div>
+          <h3 class="feature-title">お手頃</h3>
+          <p class="feature-desc">AIの力で効率化を実現し、<strong>リーズナブルな価格</strong>でプロ品質のサービスをご提供。中小企業・個人事業主の方にも安心の料金設定。</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-number">参</div>
+          <div class="feature-icon">✨</div>
+          <h3 class="feature-title">高品質</h3>
+          <p class="feature-desc">最新のAIテクノロジーと人の目による丁寧な仕上げ。<strong>プロ品質</strong>のデザインと機能で、お客様の期待を超える成果物をお届けします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI忍者くん紹介 -->
+  <section class="ninja-section" id="ninja">
+    <div class="container">
+      <div class="ninja-intro fade-in">
+        <div class="ninja-intro-image">
+          <img src="images/ninja-main.png" alt="AI忍者くん" class="ninja-main-img">
+        </div>
+        <div class="ninja-intro-text">
+          <p class="section-label">About AI Ninja</p>
+          <h2 class="section-title">AI忍者くんとは？</h2>
+          <div class="ninja-speech">
+            <p>「拙者、<strong>AI忍者</strong>でござる！💪」</p>
+            <p>最新のAIテクノロジーを駆使して、お客様のホームページ制作・アプリ開発・画像生成をお手伝いする、daruma-adの看板キャラクターです。</p>
+            <p>忍者のように<strong>素早く</strong>、<strong>正確</strong>に、そして<strong>確実</strong>にお客様のビジネスをサポートいたします！</p>
+          </div>
+          <div class="ninja-skills">
+            <span class="skill-tag">AI画像生成</span>
+            <span class="skill-tag">Web制作</span>
+            <span class="skill-tag">アプリ開発</span>
+            <span class="skill-tag">動画制作</span>
+            <span class="skill-tag">SEO対策</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 制作フロー -->
+  <section class="flow-section" id="flow">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Flow</p>
+        <h2 class="section-title">制作の<span class="text-accent">流れ</span></h2>
+        <p class="section-desc">お問い合わせからサービス開始まで、忍者のようにスピーディーに進めます。</p>
+      </div>
+      <div class="flow-steps">
+        <div class="flow-step fade-in">
+          <div class="step-number">1</div>
+          <div class="step-icon">📩</div>
+          <h3 class="step-title">お問い合わせ</h3>
+          <p class="step-desc">フォームまたはLINEからお気軽にご相談ください。</p>
+        </div>
+        <div class="flow-connector"></div>
+        <div class="flow-step fade-in">
+          <div class="step-number">2</div>
+          <div class="step-icon">🤝</div>
+          <h3 class="step-title">ヒアリング</h3>
+          <p class="step-desc">ご要望・目的・ターゲットなどを丁寧にお聞きします。</p>
+        </div>
+        <div class="flow-connector"></div>
+        <div class="flow-step fade-in">
+          <div class="step-number">3</div>
+          <div class="step-icon">🎨</div>
+          <h3 class="step-title">デザイン提案</h3>
+          <p class="step-desc">AIを活用した初稿デザインをスピーディーにご提出。</p>
+        </div>
+        <div class="flow-connector"></div>
+        <div class="flow-step fade-in">
+          <div class="step-number">4</div>
+          <div class="step-icon">🛠️</div>
+          <h3 class="step-title">制作・開発</h3>
+          <p class="step-desc">フィードバックを元に制作・開発を進めます。</p>
+        </div>
+        <div class="flow-connector"></div>
+        <div class="flow-step fade-in">
+          <div class="step-number">5</div>
+          <div class="step-icon">🚀</div>
+          <h3 class="step-title">公開・納品</h3>
+          <p class="step-desc">完成品の公開・納品。アフターサポートもご安心ください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-wrapper fade-in">
+        <div class="contact-info">
+          <p class="section-label">Contact</p>
+          <h2 class="section-title">お気軽に<br><span class="text-accent">ご相談ください</span></h2>
+          <div class="ninja-contact-speech">
+            <img src="images/ninja-contact.png" alt="AI忍者くん" class="ninja-contact-img">
+            <div class="speech-bubble">
+              <p>「無料でご相談承ります！<br>お気軽にどうぞ！」</p>
+            </div>
+          </div>
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <div>
+                <p class="contact-label">所在地</p>
+                <p>〒546-0043<br>大阪府大阪市東住吉区駒川5-8-8</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <div>
+                <p class="contact-label">電話番号</p>
+                <a href="tel:080-1478-0694">080-1478-0694</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <div>
+                <p class="contact-label">メール</p>
+                <a href="mailto:netkimono@gmail.com">netkimono@gmail.com</a>
+              </div>
+            </div>
+          </div>
+          <a href="https://lin.ee/zPFbRwW" class="btn btn-line" target="_blank">
+            💬 LINEで相談する
+          </a>
+        </div>
+        <div class="contact-form-wrapper">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/netkimono@gmail.com" method="POST">
+            <div class="form-group">
+              <label for="name">お名前 <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required placeholder="例：山田太郎">
+            </div>
+            <div class="form-group">
+              <label for="email">メールアドレス <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="例：info@example.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">電話番号</label>
+              <input type="tel" id="phone" name="phone" placeholder="例：080-1234-5678">
+            </div>
+            <div class="form-group">
+              <label for="service">ご興味のあるサービス</label>
+              <select id="service" name="service">
+                <option value="">選択してください</option>
+                <option value="ai-image">AI画像生成</option>
+                <option value="app">アプリ開発</option>
+                <option value="web">ホームページ制作</option>
+                <option value="video">動画制作</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">ご相談内容 <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="5" required placeholder="ご相談内容をお書きください"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">送信する</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer-wave">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="var(--navy)"/>
+      </svg>
+    </div>
+    <div class="footer-content">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <span class="logo-icon">🥷</span>
+              <span class="footer-logo-text">AI忍者くん</span>
+            </div>
+            <p class="footer-tagline">AIの力で、あなたの想いをカタチに。</p>
+            <p class="footer-company">運営：daruma-ad</p>
+          </div>
+          <div class="footer-nav">
+            <h4>サービス</h4>
+            <a href="https://daruma-ad.github.io/AI_kimono/" target="_blank">AI画像生成</a>
+            <a href="https://daruma-ad.github.io/AI_kimono/apps.html" target="_blank">アプリ開発</a>
+            <a href="#services">ホームページ制作</a>
+            <a href="https://daruma-ad.github.io/AI_kimono/videos.html" target="_blank">動画制作</a>
+          </div>
+          <div class="footer-nav">
+            <h4>サイトマップ</h4>
+            <a href="#hero">ホーム</a>
+            <a href="#features">特徴</a>
+            <a href="#flow">制作の流れ</a>
+            <a href="#contact">お問い合わせ</a>
+          </div>
+          <div class="footer-contact">
+            <h4>お問い合わせ</h4>
+            <p>〒546-0043<br>大阪府大阪市東住吉区駒川5-8-8</p>
+            <p><a href="tel:080-1478-0694">080-1478-0694</a></p>
+            <p><a href="mailto:netkimono@gmail.com">netkimono@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 daruma-ad All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
