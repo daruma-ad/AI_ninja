@@ -1,9 +1,48 @@
 /* ===========================
-   daruma-ad コーポレートサイト
-   JavaScript
+   AI忍者くん - CYBER THEME
+   JavaScript（マトリックス＋グリッチ）
    =========================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // --- マトリックスパーティクル（Canvas） ---
+  const canvas = document.getElementById('matrixCanvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン01';
+    const charArray = chars.split('');
+    const fontSize = 14;
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops = Array(columns).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(10, 14, 26, 0.06)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = 'rgba(0, 245, 255, 0.35)';
+      ctx.font = `${fontSize}px monospace`;
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = charArray[Math.floor(Math.random() * charArray.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(drawMatrix, 50);
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  }
+
   // --- スクロールアニメーション（Intersection Observer） ---
   const fadeElements = document.querySelectorAll('.fade-in');
 
@@ -14,12 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // 少しずつ遅延させてフェードイン
         const delay = Array.from(entry.target.parentElement.children)
           .filter(el => el.classList.contains('fade-in'))
-          .indexOf(entry.target) * 100;
+          .indexOf(entry.target) * 120;
 
         setTimeout(() => {
           entry.target.classList.add('visible');
@@ -53,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
   });
 
-  // ナビリンクをクリックしたらメニューを閉じる
   nav.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('active');
@@ -78,6 +115,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- グリッチエフェクト（セクションタイトル） ---
+  const sectionTitles = document.querySelectorAll('.section-title');
+
+  const glitchObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('glitch-active');
+        setTimeout(() => {
+          entry.target.classList.remove('glitch-active');
+        }, 600);
+        glitchObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  sectionTitles.forEach(title => glitchObserver.observe(title));
+
+  // --- タイピングエフェクト（ヒーローバッジ） ---
+  const badge = document.querySelector('.hero-badge');
+  if (badge) {
+    const originalText = badge.textContent;
+    badge.textContent = '';
+    badge.style.visibility = 'visible';
+    let i = 0;
+
+    function typeWriter() {
+      if (i < originalText.length) {
+        badge.textContent += originalText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 80);
+      }
+    }
+
+    setTimeout(typeWriter, 800);
+  }
+
   // --- お問い合わせフォーム ---
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
@@ -93,13 +166,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // フォーム送信のシミュレーション
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
-      submitBtn.textContent = '送信中...';
+      submitBtn.textContent = '>>> SENDING...';
       submitBtn.disabled = true;
 
-      // FormData を作成
       const formData = new FormData(contactForm);
 
       fetch(contactForm.action, {
@@ -107,21 +178,21 @@ document.addEventListener('DOMContentLoaded', () => {
         body: formData,
         headers: { 'Accept': 'application/json' }
       })
-      .then(response => {
-        if (response.ok) {
-          alert('お問い合わせありがとうございます！\n内容を確認の上、折り返しご連絡いたします。');
-          contactForm.reset();
-        } else {
-          alert('送信に失敗しました。\nお手数ですが、メールまたはLINEでお問い合わせください。');
-        }
-      })
-      .catch(() => {
-        alert('送信に失敗しました。\nお手数ですが、メールまたはLINEでお問い合わせください。');
-      })
-      .finally(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      });
+        .then(response => {
+          if (response.ok) {
+            alert('✅ TRANSMISSION COMPLETE\nお問い合わせありがとうございます！\n折り返しご連絡いたします。');
+            contactForm.reset();
+          } else {
+            alert('⚠ ERROR\n送信に失敗しました。\nメールまたはLINEでお問い合わせください。');
+          }
+        })
+        .catch(() => {
+          alert('⚠ CONNECTION ERROR\n送信に失敗しました。\nメールまたはLINEでお問い合わせください。');
+        })
+        .finally(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        });
     });
   }
 
