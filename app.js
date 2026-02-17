@@ -135,14 +135,27 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- タイピングエフェクト（ヒーローバッジ） ---
   const badge = document.querySelector('.hero-badge');
   if (badge) {
-    const originalText = badge.textContent;
-    badge.textContent = '';
+    const img = badge.querySelector('.ninja-icon-img');
+    const textNode = Array.from(badge.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+    const originalText = textNode ? textNode.textContent : badge.textContent;
+
+    // テキスト部分のみをクリア
+    if (textNode) {
+      textNode.textContent = '';
+    } else {
+      badge.textContent = '';
+    }
+
     badge.style.visibility = 'visible';
     let i = 0;
 
     function typeWriter() {
       if (i < originalText.length) {
-        badge.textContent += originalText.charAt(i);
+        if (textNode) {
+          textNode.textContent += originalText.charAt(i);
+        } else {
+          badge.textContent += originalText.charAt(i);
+        }
         i++;
         setTimeout(typeWriter, 80);
       }
